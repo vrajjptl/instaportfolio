@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import {
   Heart,
   MessageCircle,
@@ -11,6 +10,7 @@ import {
   Briefcase,
   GraduationCap,
   Code2,
+  Database,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -98,21 +98,20 @@ export function PostCard({ post, onPostClick }: PostCardProps) {
     return <GraduationCap className="h-4 w-4" />
   }
 
-  const getTypeGradient = () => {
-    if (post.type === "project") return "from-primary to-accent"
-    if (post.type === "experience") return "from-emerald-500 to-teal-500"
-    return "from-amber-500 to-orange-500"
+  const getVisual = () => {
+    if (post.type === "project") return "from-primary/90 via-primary/60 to-accent/80"
+    if (post.type === "experience") return "from-emerald-700 via-emerald-500 to-cyan-500"
+    return "from-amber-600 via-orange-500 to-yellow-400"
   }
 
   return (
-    <article className="border border-border bg-card rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group">
+    <article className="border border-border bg-card rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group">
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3">
         <div className="flex items-center gap-3">
           <div
             className={cn(
-              "flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-tr text-white shadow-md",
-              getTypeGradient(),
+              "flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-primary",
             )}
           >
             {getTypeIcon()}
@@ -133,14 +132,19 @@ export function PostCard({ post, onPostClick }: PostCardProps) {
 
       <button
         onClick={() => onPostClick(post)}
-        className="relative w-full aspect-square cursor-pointer overflow-hidden"
+        className={cn("relative w-full aspect-[1.25/1] cursor-pointer overflow-hidden bg-linear-to-br", getVisual())}
       >
-        <Image
-          src={post.image || "/placeholder.svg"}
-          alt={getTitle()}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.12)_1px,transparent_1px)] bg-[size:28px_28px] opacity-40" />
+        <div className="relative flex h-full flex-col justify-between p-6 text-left text-white">
+          <div className="flex items-center justify-between font-mono text-xs uppercase tracking-[0.18em] text-white/75">
+            <span>{post.type === "project" ? "Build" : post.type === "experience" ? "Role" : "Education"}</span>
+            <Database className="h-5 w-5" />
+          </div>
+          <div>
+            <p className="font-mono text-sm text-white/75">{post.type === "project" ? post.company : post.type === "experience" ? post.period : post.year}</p>
+            <h3 className="mt-2 max-w-[90%] text-2xl font-bold leading-tight">{getTitle()}</h3>
+          </div>
+        </div>
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
           <span className="text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm bg-black/50 px-3 py-1.5 rounded-full">
@@ -149,7 +153,7 @@ export function PostCard({ post, onPostClick }: PostCardProps) {
         </div>
         {post.type === "project" && post.featured && (
           <div className="absolute top-3 right-3">
-            <Badge className="bg-gradient-to-r from-accent to-primary text-white border-0 shadow-lg">Featured</Badge>
+            <Badge className="border border-white/30 bg-white/15 text-white shadow-lg backdrop-blur">Featured</Badge>
           </div>
         )}
       </button>

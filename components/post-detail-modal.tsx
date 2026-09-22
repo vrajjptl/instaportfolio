@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import { X, Heart, Bookmark, ExternalLink, MapPin, Calendar, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -38,8 +37,12 @@ export function PostDetailModal({ post, onClose }: PostDetailModalProps) {
         </button>
 
         {/* Image Section */}
-        <div className="relative w-full md:w-1/2 aspect-square md:aspect-auto">
-          <Image src={post.image || "/placeholder.svg"} alt="Post image" fill className="object-cover" />
+        <div className="relative flex min-h-56 w-full items-end overflow-hidden bg-linear-to-br from-primary via-primary/70 to-accent p-6 md:min-h-0 md:w-1/2">
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.12)_1px,transparent_1px)] bg-size-[28px_28px] opacity-40" />
+          <div className="relative text-white">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-white/70">{post.type}</p>
+            <p className="mt-2 text-3xl font-bold leading-tight">{isProject(post) ? post.title : isExperience(post) ? post.role : post.degree}</p>
+          </div>
         </div>
 
         {/* Content Section */}
@@ -47,7 +50,7 @@ export function PostDetailModal({ post, onClose }: PostDetailModalProps) {
           {/* Header */}
           <div className="border-b border-border p-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-tr from-accent to-primary text-primary-foreground font-bold">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-linear-to-tr from-accent to-primary text-primary-foreground font-bold">
                 {post.type === "project" ? "P" : post.type === "experience" ? "E" : "🎓"}
               </div>
               <div>

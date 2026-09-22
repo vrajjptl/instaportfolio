@@ -12,27 +12,31 @@ export function StoriesStrip({ activeHighlight, onHighlightClick }: StoriesStrip
   const { highlights } = resumeData
 
   return (
-    <div className="border-b border-border bg-card/50 backdrop-blur-sm">
-      <div className="mx-auto max-w-6xl px-4 py-5 md:py-6">
-        <div className="flex gap-5 md:gap-6 lg:gap-8 overflow-x-auto md:overflow-visible md:flex-wrap md:justify-center scrollbar-hide pb-1">
+    <div className="border-b border-border bg-muted/30">
+      <div className="mx-auto max-w-6xl px-4 py-5 md:py-7">
+        <div className="mb-4 flex items-center justify-between">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Core toolkit</p>
+          <p className="hidden text-xs text-muted-foreground sm:block">Built for production</p>
+        </div>
+        <div className="flex gap-3 overflow-x-auto scrollbar-hide pb-1">
           {highlights.map((highlight, index) => (
             <button
               key={highlight.id}
               onClick={() => onHighlightClick(highlight.id)}
-              className="flex flex-col items-center gap-2 min-w-fit group"
+              className="flex min-w-fit flex-col items-center gap-2 group"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <div
                 className={cn(
-                  "rounded-full p-0.5 transition-all duration-300",
+                  "rounded-xl p-px transition-all duration-300",
                   activeHighlight === highlight.id
-                    ? "bg-gradient-to-tr from-accent via-primary to-accent shadow-lg shadow-primary/25"
-                    : "bg-gradient-to-tr from-border to-muted-foreground/30 group-hover:from-primary/50 group-hover:to-accent/50",
+                    ? "bg-linear-to-tr from-accent via-primary to-accent shadow-lg shadow-primary/25"
+                    : "bg-linear-to-tr from-border to-muted-foreground/30 group-hover:from-primary/50 group-hover:to-accent/50",
                 )}
               >
                 <div
                   className={cn(
-                    "flex h-16 w-16 md:h-18 md:w-18 lg:h-20 lg:w-20 items-center justify-center rounded-full bg-card text-2xl md:text-3xl transition-transform duration-300",
+                    "flex h-14 w-20 items-center justify-center rounded-[11px] bg-card font-mono text-sm font-bold text-primary transition-transform duration-300",
                     "group-hover:scale-105",
                   )}
                 >

@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { ProfileHeader } from "@/components/profile-header"
 import { StoriesStrip } from "@/components/stories-strip"
+import { SkillsSection } from "@/components/skills-section"
 import { TabsBar, type TabType } from "@/components/tabs-bar"
 import { PostsFeed } from "@/components/posts-feed"
 import { PostDetailModal } from "@/components/post-detail-modal"
@@ -28,6 +29,9 @@ export default function PortfolioPage() {
 
       {/* Stories/Highlights Strip */}
       <StoriesStrip activeHighlight={activeHighlight} onHighlightClick={handleHighlightClick} />
+
+      {/* Technical Skills */}
+      <SkillsSection />
 
       {/* Tabs */}
       <TabsBar activeTab={activeTab} onTabChange={setActiveTab} />
