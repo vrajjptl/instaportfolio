@@ -48,11 +48,11 @@ export function BottomNav({ onContactClick }: BottomNavProps) {
                 setActiveIndex(index)
                 if (label === "Contact") onContactClick()
               }}
-              className="relative z-10 flex flex-1 items-center justify-center rounded-xl py-2 transition-transform duration-300 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className="relative z-10 flex flex-1 items-center justify-center rounded-xl py-2 transition-transform duration-200 ease-out active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               <Icon
                 aria-hidden="true"
-                className={`h-6 w-6 transition-all duration-300 ${
+                className={`h-6 w-6 transition-[color,transform] duration-200 ease-out ${
                   isActive ? "scale-110 text-primary" : "text-muted-foreground"
                 }`}
               />

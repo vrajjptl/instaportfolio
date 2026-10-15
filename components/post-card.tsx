@@ -105,7 +105,7 @@ export function PostCard({ post, onPostClick }: PostCardProps) {
   }
 
   return (
-    <article className="border border-border bg-card rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group">
+    <article className="border border-border bg-card rounded-2xl overflow-hidden shadow-sm hover:-translate-y-1 hover:shadow-xl transition-[transform,box-shadow] duration-200 ease-out group">
       {/* Header */}
       <div className="flex items-center justify-between px-4 py-3">
         <div className="flex items-center gap-3">
@@ -162,10 +162,10 @@ export function PostCard({ post, onPostClick }: PostCardProps) {
       <div className="px-4 pt-3">
         <div className="flex items-center justify-between">
           <div className="flex gap-4">
-            <button onClick={handleLike} className="transition-all duration-200 active:scale-125 hover:scale-110">
+            <button onClick={handleLike} className="transition-transform duration-200 ease-out active:scale-125 hover:scale-110">
               <Heart
                 className={cn(
-                  "h-6 w-6 transition-all",
+                  "h-6 w-6 transition-[color,fill,transform] duration-200 ease-out",
                   liked ? "fill-red-500 text-red-500 animate-pulse" : "text-foreground hover:text-red-500",
                 )}
               />
@@ -187,7 +187,7 @@ export function PostCard({ post, onPostClick }: PostCardProps) {
           <button onClick={() => setSaved(!saved)} className="hover:scale-110 transition-transform">
             <Bookmark
               className={cn(
-                "h-6 w-6 transition-all",
+                "h-6 w-6 transition-[color,fill] duration-200 ease-out",
                 saved ? "fill-primary text-primary" : "text-foreground hover:text-primary",
               )}
             />

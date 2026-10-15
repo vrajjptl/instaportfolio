@@ -47,9 +47,9 @@ export function ProfileHeader({ onContactClick }: ProfileHeaderProps) {
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
           >
-            <div className="absolute inset-0 rounded-2xl bg-linear-to-tr from-primary via-accent to-primary opacity-70 blur-md group-hover:blur-lg transition-all duration-300" />
-            <div className="relative rounded-2xl bg-linear-to-tr from-accent to-primary p-1 rotate-3 group-hover:rotate-0 transition-transform duration-300">
-              <Avatar className="h-24 w-24 md:h-36 md:w-36 lg:h-44 lg:w-44 rounded-xl border-4 border-card -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+            <div className="absolute inset-0 rounded-2xl bg-linear-to-tr from-primary via-accent to-primary opacity-70 blur-md group-hover:blur-lg transition-[filter] duration-300 ease-out" />
+            <div className="relative rounded-2xl bg-linear-to-tr from-accent to-primary p-1 rotate-3 group-hover:rotate-0 transition-transform duration-300 ease-out">
+              <Avatar className="h-24 w-24 md:h-36 md:w-36 lg:h-44 lg:w-44 rounded-xl border-4 border-card -rotate-3 group-hover:rotate-0 transition-transform duration-300 ease-out">
                 <AvatarImage
                   key={imageSource}
                   src={imageSource || "/placeholder.svg"}

@@ -23,9 +23,9 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   ]
 
   return (
-    <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm" onClick={onClose}>
+    <div className="ui-enter-backdrop fixed inset-0 z-50 bg-background/80 backdrop-blur-sm" onClick={onClose}>
       <div
-        className="fixed inset-x-4 top-1/2 -translate-y-1/2 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-md bg-card rounded-xl overflow-hidden shadow-2xl"
+        className="ui-enter-panel fixed inset-x-4 top-1/2 -translate-y-1/2 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-md bg-card rounded-xl overflow-hidden shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}

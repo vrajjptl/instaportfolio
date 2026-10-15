@@ -23,9 +23,9 @@ export function PostDetailModal({ post, onClose }: PostDetailModalProps) {
   const isEducation = (p: Post): p is EducationPost => p.type === "education"
 
   return (
-    <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm" onClick={onClose}>
+    <div className="ui-enter-backdrop fixed inset-0 z-50 bg-background/80 backdrop-blur-sm" onClick={onClose}>
       <div
-        className="fixed inset-x-4 top-[5%] bottom-[5%] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-4xl bg-card rounded-xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
+        className="ui-enter-panel fixed inset-x-4 top-[5%] bottom-[5%] md:inset-x-auto md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-4xl bg-card rounded-xl overflow-hidden shadow-2xl flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
