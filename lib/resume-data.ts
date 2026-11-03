@@ -127,7 +127,6 @@ export const resumeData = {
       details:
         "Built a Manifest V3 Chrome and Edge extension that detects Google Meet, Microsoft Teams, Slack Huddles, and Zoom calls through getUserMedia hooking and DOM MutationObserver events. It renders a hardware-accelerated, click-through overlay with adjustable 2000K-6500K color temperature, intensity, brightness, auto-start, synced settings, HDR support, and prefers-reduced-motion support while targeting under 5% CPU usage at 60fps.",
       techStack: ["JavaScript ES6", "HTML5", "CSS3", "Manifest V3", "Chrome APIs", "MutationObserver", "getUserMedia", "Performance Optimization"],
-      liveUrl: "#",
       likes: 920,
       featured: true,
     },
@@ -142,7 +141,6 @@ export const resumeData = {
       details:
         "Users load both source files, review matched and newly discovered tags in the app, then export Excel and Word reports. The workflow covers file parsing, tag matching, BOM consolidation, report generation, and Windows packaging for a practical engineering documentation tool.",
       techStack: ["Java 17", "JavaFX", "Apache POI", "Excel Export", "Word Export", "Maven", "jpackage", "File Parsing"],
-      liveUrl: "#",
       likes: 680,
       featured: true,
     },
@@ -157,7 +155,6 @@ export const resumeData = {
       details:
         "Owned backend modules and API integrations across scheduling, customer management, Stripe payments, reporting, and real-time updates.",
       techStack: ["Java", "Spring Boot", "PostgreSQL", "JPA", "JWT/RBAC", "WebSockets", "Stripe", "Jenkins"],
-      liveUrl: "#",
       likes: 1243,
       featured: true,
     },
@@ -172,7 +169,6 @@ export const resumeData = {
       details:
         "Designed API flows for RAN, data centers, IPTX, OSS, and other infrastructure systems with PostgreSQL reporting and React dashboards.",
       techStack: ["Go", "Fiber", "PostgreSQL", "React", "REST APIs", "Redis", "Docker", "AWS EC2"],
-      liveUrl: "#",
       likes: 956,
       featured: true,
     },

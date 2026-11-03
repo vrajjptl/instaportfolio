@@ -30,7 +30,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
       >
         {/* Header */}
         <div className="flex items-center justify-between border-b border-border p-4">
-          <h2 className="text-lg font-semibold">Let's Connect</h2>
+          <h2 className="text-lg font-semibold">Let&apos;s Connect</h2>
           <button onClick={onClose} className="rounded-full p-1.5 hover:bg-muted transition-colors">
             <X className="h-5 w-5" />
           </button>

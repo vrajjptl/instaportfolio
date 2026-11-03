@@ -1,30 +1,42 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useSyncExternalStore } from "react"
 import { Moon, Sun } from "lucide-react"
 import { cn } from "@/lib/utils"
 
+const themeChangeEvent = "instaportfolio:theme-change"
+
+function subscribeToTheme(onChange: () => void) {
+  window.addEventListener("storage", onChange)
+  window.addEventListener(themeChangeEvent, onChange)
+  return () => {
+    window.removeEventListener("storage", onChange)
+    window.removeEventListener(themeChangeEvent, onChange)
+  }
+}
+
+function getThemeSnapshot() {
+  const stored = localStorage.getItem("theme")
+  return stored ?? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+}
+
 export function ThemeToggle() {
-  const [isDark, setIsDark] = useState(false)
-  const [mounted, setMounted] = useState(false)
+  const theme = useSyncExternalStore(subscribeToTheme, getThemeSnapshot, () => "server")
+  const isDark = theme === "dark"
 
   useEffect(() => {
-    setMounted(true)
-    const stored = localStorage.getItem("theme")
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-    const dark = stored === "dark" || (!stored && prefersDark)
-    setIsDark(dark)
-    document.documentElement.classList.toggle("dark", dark)
-  }, [])
+    if (theme !== "server") {
+      document.documentElement.classList.toggle("dark", isDark)
+    }
+  }, [isDark, theme])
 
   const toggleTheme = () => {
     const newDark = !isDark
-    setIsDark(newDark)
-    document.documentElement.classList.toggle("dark", newDark)
     localStorage.setItem("theme", newDark ? "dark" : "light")
+    window.dispatchEvent(new Event(themeChangeEvent))
   }
 
-  if (!mounted) return null
+  if (theme === "server") return null
 
   return (
     <button

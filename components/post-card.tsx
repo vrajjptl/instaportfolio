@@ -30,7 +30,7 @@ interface ProjectPost extends BasePost {
   description: string
   details: string
   techStack: string[]
-  liveUrl: string
+  liveUrl?: string
   featured?: boolean
 }
 
@@ -162,7 +162,13 @@ export function PostCard({ post, onPostClick }: PostCardProps) {
       <div className="px-4 pt-3">
         <div className="flex items-center justify-between">
           <div className="flex gap-4">
-            <button onClick={handleLike} className="transition-transform duration-200 ease-out active:scale-125 hover:scale-110">
+            <button
+              type="button"
+              aria-label={liked ? `Unlike ${getTitle()}` : `Like ${getTitle()}`}
+              aria-pressed={liked}
+              onClick={handleLike}
+              className="transition-transform duration-200 ease-out active:scale-125 hover:scale-110"
+            >
               <Heart
                 className={cn(
                   "h-6 w-6 transition-[color,fill,transform] duration-200 ease-out",
@@ -173,18 +179,25 @@ export function PostCard({ post, onPostClick }: PostCardProps) {
             <button onClick={() => onPostClick(post)} className="hover:scale-110 transition-transform">
               <MessageCircle className="h-6 w-6 text-foreground hover:text-primary transition-colors" />
             </button>
-            {post.type === "project" && (
+            {post.type === "project" && post.liveUrl && (
               <a
                 href={post.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`View ${post.title} live`}
                 className="hover:scale-110 transition-transform"
               >
                 <ExternalLink className="h-6 w-6 text-foreground hover:text-primary transition-colors" />
               </a>
             )}
           </div>
-          <button onClick={() => setSaved(!saved)} className="hover:scale-110 transition-transform">
+          <button
+            type="button"
+            aria-label={saved ? `Unsave ${getTitle()}` : `Save ${getTitle()}`}
+            aria-pressed={saved}
+            onClick={() => setSaved(!saved)}
+            className="hover:scale-110 transition-transform"
+          >
             <Bookmark
               className={cn(
                 "h-6 w-6 transition-[color,fill] duration-200 ease-out",
