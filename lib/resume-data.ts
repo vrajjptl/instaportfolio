@@ -5,9 +5,9 @@ export const resumeData = {
   profile: {
     name: "Viraj Patil",
     username: "virajpatil",
-    role: "Backend Developer",
+    role: "Backend Software Engineer",
     location: "Pune, Maharashtra",
-    bio: "I build production APIs and data systems with Java, Go, Spring Boot, PostgreSQL, and a bias for simple, observable services.",
+    bio: "Backend Software Engineer building production APIs and data-driven services with Java, Go, Spring Boot, and PostgreSQL. Experienced in secure workflows, payment integrations, query optimization, caching, and cloud deployments.",
     avatar: "/images/20251109-132404.jpg",
     gallery: [
       { src: "/images/profile-formal.jpeg", label: "Formal portrait" },
@@ -16,7 +16,7 @@ export const resumeData = {
     ],
     stats: {
       projects: 4,
-      experience: "2.8+",
+      experience: "3+",
       techStacks: "25+",
     },
     contact: {
@@ -38,10 +38,18 @@ export const resumeData = {
   ],
   skills: {
     languages: ["Java", "Go", "Python", "JavaScript", "SQL"],
-    frameworks: ["Spring Boot", "Spring MVC", "Spring Data JPA", "Hibernate", "Fiber", "React"],
-    tools: ["Docker", "Kubernetes", "Jenkins", "Linux", "Git", "AWS EC2"],
+    frameworks: ["Spring Boot", "Spring MVC", "Spring Data JPA", "Hibernate", "Fiber", "FastAPI", "JavaFX", "React"],
+    tools: ["Docker", "Kubernetes", "Jenkins", "Apache NiFi", "Maven", "JUnit", "Mockito", "Linux", "Git", "AWS EC2"],
     databases: ["PostgreSQL", "MongoDB", "Redis", "Query Optimization", "Indexing"],
-    dataEngineering: ["REST APIs", "JWT / RBAC", "WebSockets", "ETL", "CI/CD", "Database Functions"],
+    dataEngineering: [
+      "REST API Design",
+      "JWT / RBAC",
+      "WebSockets",
+      "ETL Pipelines",
+      "Payment Integrations",
+      "CI/CD",
+      "Database Functions",
+    ],
     browserExtensions: [
       "Manifest V3",
       "Content Scripts",

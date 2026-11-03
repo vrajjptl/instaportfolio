@@ -3,10 +3,10 @@ import { resumeData } from "@/lib/resume-data"
 
 const skillGroups = [
   { key: "languages", label: "Languages", icon: Terminal },
-  { key: "frameworks", label: "Backend & Frontend", icon: Layers3 },
+  { key: "frameworks", label: "Frameworks & Libraries", icon: Layers3 },
   { key: "databases", label: "Data", icon: Database },
-  { key: "tools", label: "Cloud & DevOps", icon: Wrench },
-  { key: "dataEngineering", label: "Integration", icon: Workflow },
+  { key: "tools", label: "Tools & Testing", icon: Wrench },
+  { key: "dataEngineering", label: "APIs & Engineering", icon: Workflow },
   { key: "browserExtensions", label: "Browser Extensions", icon: MonitorCog },
 ] as const
 
@@ -20,11 +20,11 @@ export function SkillsSection() {
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-primary">Technical toolkit</p>
             <h2 id="skills-heading" className="mt-2 text-2xl font-bold tracking-tight md:text-3xl">
-              25+ technologies in practice
+              Backend engineering toolkit
             </h2>
           </div>
           <p className="hidden max-w-xs text-right text-sm leading-relaxed text-muted-foreground md:block">
-            From API design and data modeling to deployment and observability.
+            From API design and secure integrations to testing, data, and deployment.
           </p>
         </div>
 

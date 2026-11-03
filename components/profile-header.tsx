@@ -139,7 +139,7 @@ export function ProfileHeader({ onContactClick }: ProfileHeaderProps) {
                 <span className="font-bold text-xl lg:text-2xl text-primary group-hover:scale-110 transition-transform inline-block">
                   {profile.stats.experience}
                 </span>
-                <span className="text-muted-foreground ml-1.5">years exp</span>
+                <span className="text-muted-foreground ml-1.5">years experience</span>
               </div>
               <div className="text-center group cursor-default">
                 <span className="font-bold text-xl lg:text-2xl text-primary group-hover:scale-110 transition-transform inline-block">
@@ -186,7 +186,7 @@ export function ProfileHeader({ onContactClick }: ProfileHeaderProps) {
           </div>
           <div className="text-center">
             <p className="font-bold text-lg text-primary">{profile.stats.experience}</p>
-            <p className="text-xs text-muted-foreground">years exp</p>
+            <p className="text-xs text-muted-foreground">years experience</p>
           </div>
           <div className="text-center">
             <p className="font-bold text-lg text-primary">{profile.stats.techStacks}</p>

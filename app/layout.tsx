@@ -8,9 +8,9 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Viraj Patil | Java Backend Developer",
+  title: "Viraj Patil | Backend Software Engineer",
   description:
-    "Portfolio of Viraj Patil - Java Backend Developer with expertise in Spring Boot, REST APIs, and scalable backend systems.",
+    "Portfolio of Viraj Patil, a Backend Software Engineer building production APIs and data-driven services with Java, Go, Spring Boot, PostgreSQL, and cloud technologies.",
   generator: "v0.app",
   icons: {
     icon: [
